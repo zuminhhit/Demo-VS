@@ -14,7 +14,9 @@ async function init() {
   await loadSection("menu", "menu.html");
   await loadSection("video", "video.html");
   await loadSection("newsletter", "newsletter.html");
+
   await loadSection("footer", "footer.html");
+  initFooterYear();
 }
 
 function initHeroSlider() {
@@ -42,6 +44,13 @@ function initHeroSlider() {
       goToSlide(index);
     });
   });
+}
+
+function initFooterYear() {
+  const yearEl = document.getElementById("footer-year");
+  if (!yearEl) return;
+
+  yearEl.textContent = new Date().getFullYear();
 }
 
 init();
