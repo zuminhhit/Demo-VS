@@ -55,7 +55,7 @@
 
 .hero__dots {
 	position: absolute;
-	bottom: 15px;
+	bottom: 12%;
 	left: 50%;
 	transform: translateX(-50%);
 	display: flex;
