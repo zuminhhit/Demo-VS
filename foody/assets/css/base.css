@@ -1,3 +1,14 @@
 body {
     margin: 0 auto;
 }
+
+.quote {
+  padding: 120px 0;
+  text-align: center;
+  background: #9f9e9e;
+}
+
+.quote__text {
+  font-style: italic;
+  letter-spacing: 1px;
+}
