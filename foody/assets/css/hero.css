@@ -78,3 +78,20 @@
   border-radius: 6px;
   background: #fff;
 }
+
+.hero__btn {
+  align-self: flex-start;
+
+  color: #ffffff;
+  border: 2px solid #1f2b38;
+  border-radius: 30px;
+  background-color: #1f2b38;
+  padding: 15px 26px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.hero__btn:hover {
+  background-color: #16222e;
+  transform: translateY(-1px);
+}
