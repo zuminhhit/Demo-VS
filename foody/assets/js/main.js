@@ -12,7 +12,7 @@ async function init() {
   await loadSection("story", "story.html");
   initStorySlider();
 
-  await loadSection("menu", "menu.html");
+  // await loadSection("menu", "menu.html");
   await loadSection("video", "video.html");
   await loadSection("newsletter", "newsletter.html");
 
