@@ -13,6 +13,9 @@ async function init() {
   initStorySlider();
 
   await loadSection("menu", "menu.html");
+  await document.querySelector('.menu__action-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+  });
   await loadSection("video", "video.html");
   await loadSection("newsletter", "newsletter.html");
 

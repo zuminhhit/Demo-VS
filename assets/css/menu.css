@@ -74,9 +74,20 @@
 }
 
 .menu__action {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
 }
 
-.menu__btn {
-    padding: 12px 30px;
+.menu__action-title {
+  font-size: 22px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #1f2b38;
+}
+
+.menu__action-btn {
+  margin-top: 10px;
+  font-size: 26px;
+  color: #1f2b38;
 }
