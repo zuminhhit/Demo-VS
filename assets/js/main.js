@@ -13,18 +13,21 @@ async function init() {
   initStorySlider();
 
   await loadSection("menu", "menu.html");
-  await document
-    .querySelector(".menu__action-btn")
-    .addEventListener("click", (e) => {
-      e.preventDefault();
-    });
+  await blockDefaultClickLink(".menu__action-btn");
   await toggleMenuModal();
 
   await loadSection("video", "video.html");
+  await toggleVideoModal();
   await loadSection("newsletter", "newsletter.html");
 
   await loadSection("footer", "footer.html");
   initFooterYear();
+}
+
+function blockDefaultClickLink(className) {
+  document.querySelector(className).addEventListener("click", (e) => {
+    e.preventDefault();
+  });
 }
 
 function initHeroSlider() {
@@ -138,11 +141,9 @@ function toggleMenuModal() {
     }
     left = Math.max(GAP, Math.min(left, vw - previewRect.width - GAP));
 
-    // ---- Y ----
     let top = itemRect.top + itemRect.height / 2 - previewRect.height / 2;
     top = Math.max(GAP, Math.min(top, vh - previewRect.height - GAP));
 
-    // 👉 convert viewport → document coords
     preview.style.left = `${left + scrollX}px`;
     preview.style.top = `${top + scrollY}px`;
 
@@ -169,6 +170,36 @@ function toggleMenuModal() {
   preview.addEventListener("mouseleave", (e) => {
     if (e.relatedTarget?.closest(".menu__item")) return;
     preview.classList.remove("is-show");
+  });
+}
+
+function toggleVideoModal() {
+  const modal = document.querySelector(".video-modal");
+  const videoPlay = document.querySelector(".video__play");
+  const backdrop = modal.querySelector(".video-modal__backdrop");
+  const closeBtn = modal.querySelector(".video-modal__close");
+  const video = modal.querySelector(".video-modal__video");
+
+  function openModal() {
+    modal.classList.add("is-active");
+    video.currentTime = 0;
+    video.play();
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-active");
+    video.pause();
+    video.currentTime = 0;
+  }
+
+  backdrop.addEventListener("click", closeModal);
+  closeBtn.addEventListener("click", closeModal);
+  videoPlay.addEventListener("click", openModal);
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-active")) {
+      closeModal();
+    }
   });
 }
 

@@ -1,0 +1,40 @@
+<div class="video">
+    <div class="video__preview">
+        <video
+            class="video__bg"
+            autoplay
+            muted
+            loop
+            playsinline>
+            <source src="/Demo-VS/assets/videos/file_example.mp4" type="video/mp4">
+        </video>
+
+        <div class="video__overlay">
+            <h2 class="video__title">See it for yourself</h2>
+            <button class="video__play" aria-label="Play video">
+                <i class="fa-solid fa-play"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="video-modal" id="videoModal">
+    <div class="video-modal__backdrop"></div>
+
+    <div class="video-modal__dialog">
+        <button class="video-modal__close" aria-label="Close video">
+            <i class="fa-solid fa-x"></i>
+        </button>
+
+        <div class="video-modal__content">
+            <video
+                class="video-modal__video"
+                controls
+                autoplay
+                muted
+                playsinline>
+                <source src="/Demo-VS/assets/videos/file_example.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</div>
