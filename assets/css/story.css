@@ -6,7 +6,7 @@
 }
 
 .story__container {
-    max-width: 1000px;
+    max-width: 70%;
     margin: -150px auto;
     background-color: #a9a9a9;
     display: flex;

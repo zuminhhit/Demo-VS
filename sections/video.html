@@ -1,4 +1,4 @@
-<div class="video">
+<section class="video">
     <div class="video__preview">
         <video
             class="video__bg"
@@ -11,24 +11,24 @@
 
         <div class="video__overlay">
             <h2 class="video__title">See it for yourself</h2>
-            <button class="video__play" aria-label="Play video">
+            <button class="video__play js-playVideo" aria-label="Play video">
                 <i class="fa-solid fa-play"></i>
             </button>
         </div>
     </div>
-</div>
+</section>
 
-<div class="video-modal" id="videoModal">
-    <div class="video-modal__backdrop"></div>
+<section class="video-modal js-toggleVideoModal">
+    <div class="video-modal__backdrop js-closeOutSideVideoModal"></div>
 
     <div class="video-modal__dialog">
-        <button class="video-modal__close" aria-label="Close video">
+        <button class="video-modal__close js-closeVideoModal" aria-label="Close video">
             <i class="fa-solid fa-x"></i>
         </button>
 
         <div class="video-modal__content">
             <video
-                class="video-modal__video"
+                class="video-modal__video js-resetProcessVideo"
                 controls
                 autoplay
                 muted
@@ -37,4 +37,4 @@
             </video>
         </div>
     </div>
-</div>
+</section>

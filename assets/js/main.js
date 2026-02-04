@@ -18,7 +18,9 @@ async function init() {
 
   await loadSection("video", "video.html");
   await toggleVideoModal();
+
   await loadSection("newsletter", "newsletter.html");
+  await blockDefaultClickLink(".js-newsletter");
 
   await loadSection("footer", "footer.html");
   initFooterYear();
@@ -174,11 +176,11 @@ function toggleMenuModal() {
 }
 
 function toggleVideoModal() {
-  const modal = document.querySelector(".video-modal");
-  const videoPlay = document.querySelector(".video__play");
-  const backdrop = modal.querySelector(".video-modal__backdrop");
-  const closeBtn = modal.querySelector(".video-modal__close");
-  const video = modal.querySelector(".video-modal__video");
+  const modal = document.querySelector(".js-toggleVideoModal");
+  const videoPlay = document.querySelector(".js-playVideo");
+  const backdrop = modal.querySelector(".js-closeOutSideVideoModal");
+  const closeBtn = modal.querySelector(".js-closeVideoModal");
+  const video = modal.querySelector(".js-resetProcessVideo");
 
   function openModal() {
     modal.classList.add("is-active");
